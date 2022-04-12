@@ -3,8 +3,55 @@ import PropTypes from 'prop-types'
 import NewsItem from './NewsItems'
 
 export class NewsComponent extends Component {
-  static propTypes = {
-
+  articles=[
+    {
+      "source": { "id": "bbc-sport", "name": "BBC Sport" },
+      "author": "BBC Sport",
+      "title": "Australia Women v West Indies Women - Cricket - BBC Sport",
+      "description": "Find out the in depth batting and bowling figures for Australia Women v West Indies Women in the ICC Women's World Cup on BBC Sport.",
+      "url": "https://www.bbc.co.uk/sport/cricket/scorecard/ECKO49813",
+      "urlToImage": "https:////m.files.bbci.co.uk/modules/bbc-morph-sport-seo-meta/1.22.0/images/bbc-sport-logo.png",
+      "publishedAt": "2022-03-14T21:52:20.2350419Z",
+      "content": null
+    },
+    {
+      "source": { "id": "news24", "name": "News24" },
+      "author": "Lynn Butler",
+      "title": "Kapp dedicates England 'revenge' win to Van Niekerk: 'This was for her'",
+      "description": "South Africa remains unbeaten at this year's Women's Cricket World Cup in New Zealand following their final over win against England in Hamilton on Monday.",
+      "url": "https://www.news24.com/sport/Cricket/WomensCricketWorldCup/kapp-dedicates-england-revenge-win-to-van-niekerk-this-was-for-her-20220314",
+      "urlToImage": "https://cdn.24.co.za/files/Cms/General/d/1295/49f2bcafa42b4f5f8109828a581f7a2d.jpg",
+      "publishedAt": "2022-03-14T18:36:39+00:00",
+      "content": "<ul><li>Proteas all-rounder Marizanne Kapp dedicated South Africa's nail-biting Women's World Cup win against England to regular captain and wife Dane van Niekerk.</li><li>South Africa clinched their… [+3086 chars]"
+    },
+    {
+      "source": { "id": "espn-cric-info", "name": "ESPN Cric Info" },
+      "author": null,
+      "title": "PCB hands Umar Akmal three-year ban from all cricket | ESPNcricinfo.com",
+      "description": "Penalty after the batsman pleaded guilty to not reporting corrupt approaches | ESPNcricinfo.com",
+      "url": "http://www.espncricinfo.com/story/_/id/29103103/pcb-hands-umar-akmal-three-year-ban-all-cricket",
+      "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1099495_800x450.jpg",
+      "publishedAt": "2020-04-27T11:41:47Z",
+      "content": "Umar Akmal's troubled cricket career has hit its biggest roadblock yet, with the PCB handing him a ban from all representative cricket for three years after he pleaded guilty of failing to report det… [+1506 chars]"
+    },
+    {
+      "source": { "id": "espn-cric-info", "name": "ESPN Cric Info" },
+      "author": null,
+      "title": "What we learned from watching the 1992 World Cup final in full again | ESPNcricinfo.com",
+      "description": "Wides, lbw calls, swing - plenty of things were different in white-ball cricket back then | ESPNcricinfo.com",
+      "url": "http://www.espncricinfo.com/story/_/id/28970907/learned-watching-1992-world-cup-final-full-again",
+      "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1219926_1296x729.jpg",
+      "publishedAt": "2020-03-30T15:26:05Z",
+      "content": "Last week, we at ESPNcricinfo did something we have been thinking of doing for eight years now: pretend-live ball-by-ball commentary for a classic cricket match. We knew the result, yes, but we tried… [+6823 chars]"
+    }
+  ]
+  constructor(params) {
+    super();
+    console.log("Hello I am a constructor");
+    this.state={
+      articles : this.articles,
+      loading :false
+    };
   }
 
   render() {
