@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 
 export class NewsItemComponent extends Component {
+  constructor(params) {
+    super();
+  }
+
+
   render() {
-    let {title, description}=this.props;
+    let {title, description, imageUrl}=this.props;
     return (
-      <div>
+      <div className="my-3">
        <div className="card" style={{width: "18rem"}}>
-          <img src="https:////m.files.bbci.co.uk/modules/bbc-morph-sport-seo-meta/1.22.0/images/bbc-sport-logo.png" className="card-img-top" alt="..."/>
+          <img src={imageUrl} className="card-img-top" alt="..."/>
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
-            <a href="/newsdetails" className="btn btn-primary">Go somewhere</a>
+            <a href="/newsdetails" className="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
