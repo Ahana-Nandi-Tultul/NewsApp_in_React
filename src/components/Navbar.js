@@ -23,8 +23,20 @@ export class Navbar extends Component {
                     <li className="nav-item">
                     <a className="nav-link" href="/">Link</a>
                     </li>
-                    <li className="nav-item">
-                    <a className="nav-link" href="/">About</a>
+                    <li><a className="nav-link" href="/">About</a></li>
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                      </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a className="dropdown-item" href="/">business</a></li>
+                      <li><a className="dropdown-item" href="/">entertainment</a></li>
+                      <li><a className="dropdown-item" href="/">general</a></li>
+                      <li><a className="dropdown-item" href="/">health</a></li>
+                      <li><a className="dropdown-item" href="/">science</a></li>
+                      <li><a className="dropdown-item" href="/">sports</a></li>
+                      <li><a className="dropdown-item" href="/">technology</a></li>
+                    </ul>
                     </li>
                 </ul>
                 {/* <form className="d-flex">
