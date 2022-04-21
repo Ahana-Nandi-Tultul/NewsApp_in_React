@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
 export default class App extends Component {
+  pageSize=15;
   render() {
     return (
       <div>
@@ -18,13 +19,13 @@ export default class App extends Component {
         
             <Switch>
               {/* <Route exact path="/about" element={<About/>}/> */}
-              <Route exact path="/business"><NewsComponent key="business"  pageSize={5} country={'in'} category={"business"}/></Route>
-              <Route exact path="/entertainment"><NewsComponent key="entertainment"  pageSize={5} country={'in'} category={"entertainment"}/></Route>
-              <Route exact path="/general"><NewsComponent key="general"  pageSize={5} country={'in'} category={"general"}/></Route>
+              <Route exact path="/business"><NewsComponent key="business"  pageSize={this.pageSize} country={'in'} category={"business"}/></Route>
+              <Route exact path="/entertainment"><NewsComponent key="entertainment"  pageSize={this.pageSize} country={'in'} category={"entertainment"}/></Route>
+              <Route exact path="/general"><NewsComponent key="general"  pageSize={this.pageSize} country={'in'} category={"general"}/></Route>
               <Route exact path="/health"><NewsComponent  key="health"p ageSize={5} country={'in'} category={"health"}/></Route>
               <Route exact path="/science"><NewsComponent  key="science"p ageSize={5} country={'in'} category={"science"}/></Route>
-              <Route exact path="/sports"><NewsComponent key="sports"  pageSize={5} country={'in'} category={"sports"}/></Route>
-              <Route exact path="/technology"><NewsComponent key="technology"  pageSize={5} country={'in'} category={"technology"}/></Route>
+              <Route exact path="/sports"><NewsComponent key="sports"  pageSize={this.pageSize} country={'in'} category={"sports"}/></Route>
+              <Route exact path="/technology"><NewsComponent key="technology"  pageSize={this.pageSize} country={'in'} category={"technology"}/></Route>
               </Switch>
         </Router>
       </div>
