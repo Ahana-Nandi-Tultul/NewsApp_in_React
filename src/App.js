@@ -18,6 +18,7 @@ export default class App extends Component {
         <Navbar/>
         
             <Switch>
+            <Route exact path="/"><NewsComponent key="home"  pageSize={this.pageSize} country={'in'} category={"general"}/></Route>
               {/* <Route exact path="/about" element={<About/>}/> */}
               <Route exact path="/business"><NewsComponent key="business"  pageSize={this.pageSize} country={'in'} category={"business"}/></Route>
               <Route exact path="/entertainment"><NewsComponent key="entertainment"  pageSize={this.pageSize} country={'in'} category={"entertainment"}/></Route>
