@@ -32,7 +32,7 @@ export class NewsComponent extends Component {
   async updateNews() {
     this.props.setProgress(10);
     console.log("cdm");
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5c8527750f1e4558a27ff4902f6a22ab&page=${this.state.page}
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}
     &pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
@@ -54,7 +54,8 @@ export class NewsComponent extends Component {
   fetchMoreData =async () => {
     this.setState({page: this.state.page+1})
     console.log("cdm");
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5c8527750f1e4558a27ff4902f6a22ab&page=${this.state.page}
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&
+    apiKey=${this.props.apiKey}&page=${this.state.page}
     &pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
@@ -90,7 +91,7 @@ export class NewsComponent extends Component {
         <InfiniteScroll
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
-          hasMore={this.state.articles.length != this.state.totalResults}
+          hasMore={this.state.articles.length !== this.state.totalResults}
           loader={this.state.loading && <Spinner/>}
         >
         <div className="container">
