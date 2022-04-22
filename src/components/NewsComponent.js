@@ -30,12 +30,15 @@ export class NewsComponent extends Component {
     document.title= `${this.capitalizeFirstLetter(this.props.category)} - News App`;
   }
   async updateNews() {
+    this.props.setProgress(10);
     console.log("cdm");
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5c8527750f1e4558a27ff4902f6a22ab&page=${this.state.page}
     &pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parseData = await data.json();
+    this.props.setProgress(50);
     console.log(parseData);
     this.setState({
       articles: parseData.articles,
@@ -43,6 +46,7 @@ export class NewsComponent extends Component {
       loading: false,
       totalResults:0
     });
+    this.props.setProgress(100);
   }
   async componentDidMount() {
     this.updateNews();
